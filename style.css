@@ -1,0 +1,454 @@
+body {
+    color: white;
+    font-family: 'Questrial', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.body-lock-scroll {
+    overflow: hidden;
+}
+
+.header-container {
+    background-image: url("https://sxcontent9668.azureedge.us/cms-assets/assets/Crew_6_Desktop_9857f5c2f0.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 610px;
+    background-size: cover;
+}
+
+.header-text {
+    position: absolute;
+    top: 380px;
+    left: 2%;
+    font-size: 21px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px;
+    font-weight: bold;
+}
+
+.spacex-logo {
+    height: 50px;
+}
+
+.navigation {
+    display: flex;
+    flex-grow: 2;
+    justify-content: space-around;
+}
+
+.shop {
+    color: white;
+    padding: 5px;
+    margin: 1px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.navigation-list {
+    display: inline-block;
+    position: relative;
+    color: white;
+    text-decoration: none;
+}
+
+.navigation-list::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    bottom: -4px;
+    left: 0;
+    background-color: white;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.navigation-list:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.menu {
+    display: flex;
+    flex-grow: 1;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.bar-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+    align-items: flex-end;
+    cursor: pointer;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+    width: 15px;
+    height: 2px;
+    background-color: white;
+    margin: 2px 0px;
+    transition: 0.4s;
+}
+
+.overlay {
+    height: 100%;
+    width: 0;
+    right: 0;
+    top: 0;
+    position: fixed;
+    z-index: 1;
+    background-color: black;
+    opacity: 0.9;
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+
+.overlay-content {
+    position: relative;
+    top: 10%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+}
+
+
+.overlay-content-for-sc {
+    display: none;
+}
+
+.overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+}
+
+.overlay a:hover,
+.overlay a:focus {
+    color: #f1f1f1;
+}
+
+.overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    left: 45px;
+    font-size: 30px;
+}
+
+.content-img {
+    display: block;
+    height: auto;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.content-container {
+    margin: 0;
+    padding: 0;
+}
+
+.img-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-bottom: 0;
+    padding: 0;
+}
+
+.img-container img {
+    object-fit: cover;
+}
+
+.content-text {
+    position: absolute;
+    font-size: 20px;
+    left: 30px;
+    padding-bottom: 100px;
+}
+
+.ct {
+    padding: 1px;
+    margin: 1px;
+}
+
+.button-animation {
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+    padding: 15px 15px;
+    color: white;
+    border: 2px solid white;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    z-index: 0
+}
+
+.button-animation:hover {
+    color: black;
+}
+
+.button-animation::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    background-color: white;
+    transform: scaleY(0);
+    transform-origin: top right;
+    transition: transform 0.25s ease-in-out;
+    z-index: -1;
+}
+
+.button-animation:hover::before {
+    height: 100%;
+    transform: scaleY(1);
+    transform-origin: bottom right;
+}
+
+.footer {
+    display: flex;
+    font-size: small;
+    justify-content: center;
+    background-color: black;
+    padding: 30px;
+    white-space: nowrap;
+}
+
+.footer-item {
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.scroll-indicator {
+    font-size: 36px;
+    position: absolute;
+    bottom: 20px;
+    color: #ece2e2be;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: fadeBounce 5s ease-in-out infinite;
+}
+
+.scroll-indicator-bar {
+    width: 15px;
+    height: 15px;
+    border-left: 2px solid white;
+    border-bottom: 2px solid white;
+    transform: rotate(-45deg);
+}
+
+#si1 {
+    top: 195%;
+}
+
+#si2 {
+    top: 295%;
+}
+
+#si3 {
+    top: 440%
+}
+
+@keyframes fadeBounce {
+
+    0%,
+    50%,
+    0%,
+    90%,
+    100% {
+        opacity: 0;
+        transform: translateY(0);
+    }
+
+    10%,
+    40% {
+        opacity: 1;
+        transform: translateY(-20px);
+    }
+
+    60%,
+    90% {
+        opacity: 1;
+        transform: translateY(-10px);
+    }
+}
+
+@media only screen and (max-width: 1100px) {
+
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        overflow-x: hidden;
+    }
+
+    .header {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding: 10px;
+        font-weight: bold;
+    }
+
+    .logo {
+        margin: 0 auto;
+    }
+
+    .spacex-logo {
+        width: 100%;
+        margin: 0 auto;
+        margin-left: 13px;
+        height: 30px;
+    }
+
+    .navigation,
+    #shop {
+        display: none;
+    }
+
+    .menu {
+        width: 5%;
+        float: none;
+        text-align: center;
+    }
+
+    .menu {
+        display: flex;
+        flex-grow: 0;
+        justify-self: flex-end;
+        align-items: center;
+    }
+
+    .bar-container {
+        padding: 1px;
+    }
+
+    .overlay a {
+        font-size: 10px
+    }
+
+    .overlay {
+        height: 100%;
+        width: 0;
+        right: 0;
+        top: 0;
+        position: fixed;
+        z-index: 1;
+        opacity: 0.9;
+        overflow-x: hidden;
+        transition: 0.5s;
+    }
+
+    .overlay-content {
+        display: none;
+    }
+
+    .overlay-content-for-sc {
+        display: block;
+        position: relative;
+        top: 10%;
+        width: 100%;
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    .overlay .closebtn {
+        position: absolute;
+        top: 10px;
+        left: 15px;
+        font-size: 20px;
+    }
+
+
+    .content-img {
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 610px;
+    }
+
+    #ci2 {
+        width: 100%;
+    }
+
+    .content-text {
+        position: absolute;
+        font-size: 15px;
+        left: 20px;
+        padding-bottom: 70px;
+    }
+
+    .header-text {
+        position: absolute;
+        top: 380px;
+        left: 5%;
+        font-size: 15px;
+    }
+
+    .scroll-indicator {
+        display: none;
+    }
+
+    .footer {
+        font-size: 10px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+
+    .content-text {
+        font-size: 12px;
+    }
+
+    .header-text {
+        font-size: 12px;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 2px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(141, 132, 132);
+    border-radius: 1px;
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+    background: #8a989ee0;
+}
+
+::-webkit-scrollbar-track {
+    background: black;
+    border-radius: 100px;
+}
+
+::-webkit-scrollbar-thumb {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
